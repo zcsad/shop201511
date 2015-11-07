@@ -31,12 +31,6 @@ class BaseController extends Controller
         }
 
         //>>2.使用模型中的select方法将数据查询出来
-        /**
-         * $pageResult{
-         * $rows=>
-         *   $pageHtml=>
-         * }
-         */
         $pageResult = $this->model->getPageResult($wheres);
         //>>3.需要将查询出来的数据分配到页面 assign
         $this->assign($pageResult);
@@ -79,18 +73,19 @@ class BaseController extends Controller
         if (IS_POST) {
             //>>1.收集更新的数据
             if ($this->model->create() !== false) {
-                if ($this->model->save() !== false) {
+                if ($this->model->save()!==false) {
                     $this->success('更新成功!', cookie('__forward__'));
                     return;
                 }
             }
-            $this->error('操作失败!' . showErrors($this->model));
+            $this->error('操作失败!' .showError($this->model));
         } else {
             //>>2.根据id查询一行记录
             $row = $this->model->find($id);
             //>>3.将数据分配到页面上
             $this->assign($row);
             //>>4.选择视图页面显示
+            $this->_before_edit_view();
             $this->assign('meta_title', '编辑' . $this->meta_title);
             $this->display('edit');
         }

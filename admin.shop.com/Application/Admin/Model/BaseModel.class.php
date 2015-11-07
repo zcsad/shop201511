@@ -46,6 +46,8 @@ class BaseModel extends Model
             //表示删除, 将name原始值修改为     xxxx_del
             $data['name'] = array('exp', "concat(name,'_del' )");
         }
-        return $this->where(array('id' => array('in', $id)))->save($data);  //update supplier set  status = -1  ,  name = concat(name,'_del' ) where id = 6;
+        //>>设置更新条件
+        $this->where(array('id' => array('in', $id)));
+        return parent::save($data);//update supplier set  status = -1  ,  name = concat(name,'_del' ) where id = 6;
     }
 }

@@ -14,7 +14,6 @@ use Think\Upload;
 
 class UploaderController extends Controller
 {
-
     //接收到上传插件上传上来的文件保存到指定的位置
     public function index(){
         //>>1.接收上传的目录参数
