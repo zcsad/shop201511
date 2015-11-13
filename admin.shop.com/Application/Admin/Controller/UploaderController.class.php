@@ -26,13 +26,22 @@ class UploaderController extends Controller
         $config = array(
             'exts'         => array(), //允许上传的文件后缀
             'rootPath'     => './Uploads/', //
+//            'rootPath'     => './',//如果使用又拍云,就改到根目录下
             'savePath'     => $dir.'/', //保存路径
+            'driver'       => '', // 文件上传驱动
+            'driverConfig' => array(), // 上传驱动配置
+//            'driverConfig' => array(
+//                'host'     => 'v0.api.upyun.com', //又拍云服务器
+//                'username' => 'itsource', //又拍云操作员用户
+//                'password' => 'itsource', //又拍云操作员密码
+//                'bucket'   => 'itsource-'.$dir, //空间名称   //itsource-brand
+//                'timeout'  => 90, //超时时间
+//            ), // 上传驱动配置
         );
         $uploader = new Upload($config);
         //>>3.将上传后的路径放到$_POST
         $info = $uploader->uploadOne($_FILES['Filedata']);
         if($info!==false){
-
             echo $info['savepath'].$info['savename'];
         }else{
             echo $uploader->getError();

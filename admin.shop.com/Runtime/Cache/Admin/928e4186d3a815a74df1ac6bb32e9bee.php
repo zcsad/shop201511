@@ -37,7 +37,7 @@
             <th width="50px">序号<input type="checkbox"  class="all"/></th>
                         <th>名称</th>
                         <th>货号</th>
-                        <th>父分类</th>
+                        <th>商品分类</th>
                         <th>品牌</th>
                         <th>供货商</th>
                         <th>本店价格</th>

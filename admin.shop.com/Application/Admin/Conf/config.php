@@ -8,9 +8,12 @@ return array(
         '__JS__' => WEB_URL . '/Public/Admin/js',
         '__LAYER__' => WEB_URL . '/Public/Admin/layer/layer.js', // 增加新的上传路径替换规则
         '__UPLOADIFY__' => WEB_URL . '/Public/Admin/uploadify',
-//        '__BRAND__' => "http://itsource-brand.b0.upaiyun.com", // brand又拍云空间中的地址
+        '__BRAND__' => "http://itsource-brand.b0.upaiyun.com", // brand又拍云空间中的地址
+        '__GOODS__' => "http://itsource-goods.b0.upaiyun.com", // goods又拍云空间中的地址
         '__TREEGRID__' => WEB_URL . '/Public/Admin/treegrid',
         '__ZTREE__' => WEB_URL . '/Public/Admin/ztree',
+        '__UEDITOR__' => WEB_URL . '/Public/Admin/ueditor',
+
     )
 
 );

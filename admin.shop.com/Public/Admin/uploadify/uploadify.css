@@ -2,6 +2,22 @@ img {
 	max-width: 100%;
 	border: 0 none;
 }
+/*<!--商品上传css样式-->*/
+	/*<style type="text/css">*/
+.upload-pre-item{
+	position: relative;
+}
+.upload-pre-item a{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: block;
+	background-color: red;
+}
+/*</style>*/
+
+
+
 
 /* = uploadify上传插件样式
 ------------------------------------------ */
